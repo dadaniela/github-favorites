@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>GitHub Favorites</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>GitHub Favorites</h1>
+            <div id="search">
+                <label for="input-search">GitHub user</label>
+                <input id="input-search" type="text" placeholder="GitHub user">
+                <button>&plus;</button>
+            </div>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Repositories</th>
+                    <th>Followers</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="user">
+                        <img src="https://github.com/dadaniela.png" alt="GitHub profile picture">
+                        <a href="https://github.com/dadaniela" target="_blank">
+                            <p>Daniela</p>
+                            <span>dadaniela</span>
+                        </a>
+                    </td>
+                    <td class="repositories">
+                        17
+                    </td>
+                    <td class="followers">
+                        6
+                    </td>
+                    <td>
+                        <button>&times</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="user">
+                        <img src="https://github.com/chmiiller.png" alt="GitHub profile picture">
+                        <a href="https://github.com/chmiiller" target="_blank">
+                            <p>Carlos</p>
+                            <span>chmiiller</span>
+                        </a>
+                    </td>
+                    <td class="repositories">
+                        57
+                    </td>
+                    <td class="followers">
+                        27
+                    </td>
+                    <td>
+                        <button>&times</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
