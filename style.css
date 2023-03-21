@@ -11,6 +11,11 @@
     --text-color: #c9d1d9;
     --hue: 212;
     --primary-color: hsl(var(--hue), 68%, 57%);
+    --remove-btn: #e16767;
+    --img-border: #656565;
+    --tr-bg-even: #1d1c1c;
+    --tr-bg-odd: #2a2929;
+    --search-btn-font: #e2e2e2;
 }
 
 body {
@@ -68,7 +73,7 @@ header h1 {
 .search button {
     background: var(--primary-color);
     height: 3.2rem;
-    color: #e2e2e2;
+    color: var(--search-btn-font);
     border: none;
     border-radius: 0 .4rem .4rem 0;
     padding: 0 1rem;
@@ -108,11 +113,11 @@ table th:last-child {
 }
 
 table tr {
-    background: #1d1c1c;
+    background: var(--tr-bg-even);
 }
 
 table tr:nth-child(odd) {
-    background: #2a2929;
+    background: var(--tr-bg-odd);
 }
 
 table td {
@@ -135,7 +140,7 @@ td.user img {
     height: 5rem;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid #656565;
+    border: 1px solid var(--img-border);
 }
 
 td.user a {
@@ -153,5 +158,5 @@ td.user a span {
 td .remove {
     background: none;
     border: none;
-    color: #e16767;
+    color: var(--remove-btn);
 }
