@@ -3,6 +3,6 @@ It’s one of the courses offered by [rocketseat.com.br](https://rocketseat.com.
 
 ### GitHub Favorites
 
-In this page we've made a call to the GitHub API to get some information from a desired GitHub user profile. The end result is a favorites page, where you can add and delete accounts from the list.
+On this page, we make calls to the GitHub API to get some information from a desired GitHub user profile. The end result is a favorites page, where you can add and delete accounts from the list.
 
 You can access the final result [here](https://dadaniela.github.io/github-favorites)
