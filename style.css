@@ -36,7 +36,7 @@ button {
 }
 
 #app {
-    max-width: 500px;
+    max-width: 550px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -83,6 +83,7 @@ header h1 {
 table {
     width: 100%;
     border-collapse: collapse;
+    box-shadow: 0 1rem 2rem -1rem rgba(118, 118, 118, 0.3);
 }
 
 table * {
@@ -106,6 +107,10 @@ table th:last-child {
     border-top-right-radius: .4rem;
 }
 
+table tr {
+    background: #1d1c1c;
+}
+
 table tr:nth-child(odd) {
     background: #2a2929;
 }
@@ -119,9 +124,34 @@ table td:first-child {
     text-align: left;
 }
 
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 td.user img {
     width: 5rem;
     height: 5rem;
     object-fit: cover;
     border-radius: 50%;
+    border: 1px solid #656565;
+}
+
+td.user a {
+    text-decoration: none;
+}
+
+td.user a p {
+    font-weight: bold;
+}
+
+td.user a span {
+    color: var(--primary-color);
+}
+
+td .remove {
+    background: none;
+    border: none;
+    color: #e16767;
 }
