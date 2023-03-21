@@ -19,17 +19,27 @@ export class Favorites {
     }
 
     load() {
-        this.entries = JSON.parse(localStorage.getItem("@github-favorites:")) || []     
+        this.entries = JSON.parse(localStorage.getItem("@github-favorites")) || []     
+    }
+
+    save() {
+        localStorage.setItem("@github-favorites", JSON.stringify(this.entries))
     }
 
     async add(username) {
         try {
+            const userExists = this.entries.find(entry => entry.login === username)
+            if(userExists) {
+                throw new Error("User already favorited")
+            }
+
             const user = await GithubUser.search(username)
             if(user.login === undefined) {
                 throw new Error ("User not found")
             }
             this.entries = [user, ...this.entries] //adds the last user searched on top of the other previous entries in this new array
             this.update()
+            this.save()
         } catch(error) {
             alert(error.message)
         }
@@ -40,6 +50,7 @@ export class Favorites {
         const filteredEntries = this.entries.filter(entry => entry.login !== user.login) //returns true or false
         this.entries = filteredEntries
         this.update()
+        this.save()
     }
 }
 
