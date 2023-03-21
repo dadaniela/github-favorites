@@ -159,4 +159,10 @@ td .remove {
     background: none;
     border: none;
     color: var(--remove-btn);
+    cursor: pointer;
+    transition: scale 200ms;
+}
+
+td .remove:hover {
+    scale: 1.3;
 }

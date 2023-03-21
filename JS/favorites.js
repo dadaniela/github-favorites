@@ -5,21 +5,13 @@ export class Favorites {
     }
 
     load() {
-        const entries = [
-            {
-                login: "dadaniela",
-                name: "Daniela Trindade",
-                public_repos: "17",
-                followers: "6"
-            },
-            {
-                login: "chmiiller",
-                name: "Carlos Zinato",
-                public_repos: "57",
-                followers: "27"
-            }
-        ]
-        this.entries = entries
+        this.entries = JSON.parse(localStorage.getItem("@github-favorites:")) || []     
+    }
+
+    deleteUser(user) {
+        const filteredEntries = this.entries.filter(entry => entry.login !== user.login) //returns true or false
+        this.entries = filteredEntries
+        this.update()
     }
 }
 
@@ -42,7 +34,15 @@ export class FavoritesView extends Favorites {
             row.querySelector(".user span").textContent = user.login
             row.querySelector(".repositories").textContent = user.public_repos
             row.querySelector(".followers").textContent = user.followers
-        })
+            row.querySelector(".remove").addEventListener("click", () => {
+                const isOk = confirm("Are you sure you want to delete this user?")
+                if(isOk) {
+                    this.deleteUser(user)
+                }
+            })
+
+            }
+        )
     }
 
     createRow() {
